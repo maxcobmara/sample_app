@@ -19,6 +19,7 @@ body {
   padding-top: 60px;
 }
 
+
 section {
   overflow: auto;
 }
@@ -32,6 +33,9 @@ textarea {
   h1 {
     margin-bottom: 10px;
   }
+  hero-unit {
+	background-image: url('images/banner.jpg');
+}
 }
 
 /* typography */

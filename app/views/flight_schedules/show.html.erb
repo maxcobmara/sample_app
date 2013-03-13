@@ -1,0 +1,35 @@
+<%- model_class = FlightSchedule -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:flight_code) %>:</strong></dt>
+  <dd><%= @flight_schedule.flight_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:from) %>:</strong></dt>
+  <dd><%= @flight_schedule.gofroms.aiport_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:to) %>:</strong></dt>
+  <dd><%= @flight_schedule.gotos.aiport_code %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:depart_at) %>:</strong></dt>
+  <dd><%= @flight_schedule.depart_at %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:depart_on) %>:</strong></dt>
+  <dd><%= @flight_schedule.depart_on %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:flight_time) %>:</strong></dt>
+  <dd><%= @flight_schedule.flight_tim %> minutes</dd>
+  <dt><strong><%= model_class.human_attribute_name(:seats) %>:</strong></dt>
+  <dd><%= @flight_schedule.seats %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd>RM<%= @flight_schedule.price %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              flight_schedules_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_flight_schedule_path(@flight_schedule), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              flight_schedule_path(@flight_schedule),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

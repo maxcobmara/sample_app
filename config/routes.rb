@@ -1,4 +1,7 @@
 SampleApp::Application.routes.draw do
+  resources :flight_schedules
+
+
   resources :destinations
 
   resources :users

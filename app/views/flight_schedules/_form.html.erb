@@ -1,0 +1,56 @@
+<%= form_for @flight_schedule, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :flight_code, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :flight_code, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :to, :class => 'control-label' %>
+    <div class="controls">
+			<%= f.collection_select :to, Destination.find(:all, :order => 'aiport_code'), :id, :aiport_code, {:class => 'dropdown-menu'} %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :from, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :from, Destination.find(:all, :order => 'aiport_code'), :id, :aiport_code %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :depart_at, :class => 'control-label' %>
+    <div class="controls">
+			<%= f.date_select :depart_at, {:prompt => { :day => 'day', :month => 'month', :year => 'year' }}, {:class => 'date-select'}  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :depart_on, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.time_select :depart_on, {:prompt => { :day => 'Select day', :month => 'Select month', :year => 'Select year' }}, {:class => 'time_select'}  %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :flight_time, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :flight_tim, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :seats, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :seats, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :price, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :price, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                flight_schedules_path, :class => 'btn' %>
+  </div>
+<% end %>

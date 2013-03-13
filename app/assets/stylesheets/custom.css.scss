@@ -154,10 +154,22 @@ aside {
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width:auto;
   padding: 10px;
   margin-bottom: 15px;
   @include box_sizing;
+}
+
+select.date-select {
+    width:auto;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
+}
+
+select.time_select {
+    width:auto;
+    border: 1px solid #cccccc;
+    background-color: #ffffff;
 }
 
 input {

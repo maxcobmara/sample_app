@@ -1,4 +1,7 @@
 SampleApp::Application.routes.draw do
+  resources :reservations
+
+
   resources :flight_schedules
 
 

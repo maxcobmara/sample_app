@@ -3,4 +3,6 @@ class FlightSchedule < ActiveRecord::Base
   
   belongs_to :gotos,    :class_name => 'Destination', :foreign_key => 'to'
   belongs_to :gofroms,    :class_name => 'Destination', :foreign_key => 'from'
+  
+  has_many :reservations, :foreign_key => 'flight_id'
 end

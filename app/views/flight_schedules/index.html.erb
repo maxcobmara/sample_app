@@ -46,8 +46,9 @@
         <td><%= flight_schedule.seats %></td>
         <td><%= flight_schedule.price %></td>
         <td>
+				<td><%= link_to "Book Now", new_reservation_path(:flight_id => flight_schedule), :class => 'btn btn-mini btn-primary '%>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_flight_schedule_path(flight_schedule), :class => 'btn btn-mini' %>
+                      edit_flight_schedule_path(flight_schedule), :class => 'btn btn-mini ' %>
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       flight_schedule_path(flight_schedule),
                       :method => :delete,

@@ -2,7 +2,8 @@ class FlightSchedulesController < ApplicationController
   # GET /flight_schedules
   # GET /flight_schedules.json
   def index
-    @flight_schedules = FlightSchedule.all
+    @search = FlightSchedule.search(params[:q])
+    @flight_schedules = @search.result
 
     respond_to do |format|
       format.html # index.html.erb

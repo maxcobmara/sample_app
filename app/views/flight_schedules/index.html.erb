@@ -2,6 +2,22 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
+
+<%= search_form_for @search do |f| %>
+	<div class="field">
+	  <%= f.label :gofroms_aiport_code_cont, "Departs From" %>
+	  <%= f.text_field :gofroms_aiport_code_cont %>
+	</div>
+	<div class="field">
+	  <%= f.label :gotos_aiport_code_cont, "Heading to" %>
+	  <%= f.text_field :gotos_aiport_code_cont %>
+	</div>
+	<div class="field">
+	  <%= f.label :depart_at_eq, "Departs on" %>
+	  <%= f.date_select :depart_at_eq %>
+	</div>
+	<div class="actions"><%= f.submit "Search" %></div>
+<% end %>
 <table class="table table-striped">
   <thead>
     <tr>
